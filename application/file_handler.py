@@ -33,6 +33,18 @@ class FileManager():
 
         return final_path
 
+    def exists(self, path: str) -> bool:
+        """
+        Return a boolean on whether a file/directory exists
+
+        Args:
+            path (str): path to be tested
+
+        Returns:
+            True/False (bool): boolean response to if the file/directory exists
+        """
+        return os.path.exists(path)
+
     def load_file(self):
         pass
 
