@@ -62,9 +62,9 @@ class FileManager():
         if not self.exists(completed_path):
             open(completed_path, 'w', encoding='utf-8').close()
             return True
-        
+
         print(f"Sorry, file {completed_path} already exists.")
-        
+
         return False
 
     def make_directory(self, path: str) -> bool:
@@ -81,9 +81,9 @@ class FileManager():
         if not self.exists(path):
             os.mkdir(path)
             return True
-        
+
         print(f"Sorry, directory {path} already exists.")
-        
+
         return False
 
     def delete_file(self, path: str) -> bool:
@@ -102,7 +102,7 @@ class FileManager():
             return True
 
         print(f"Sorry, {path} doesn't exist, cannot be deleted.")
-        
+
         return False
 
     def delete_directory(self, path: str) -> bool:
