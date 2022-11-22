@@ -41,23 +41,93 @@ class FileManager():
             path (str): path to be tested
 
         Returns:
-            True/False (bool): boolean response to if the file/directory exists
+            (bool): boolean response to if the file/directory exists
         """
         return os.path.exists(path)
 
-    def load_file(self):
-        pass
+    def make_file(self, path: str, file_exstension: str) -> bool:
+        """
+        Provided a file doesn't already exist, create it
+        Otherwise, notify that the file already exists
 
-    def make_file(self):
-        pass
+        Args:
+            path (str): path to the file to be created
+            file_exstension(str): exstention of the file to be deleted, e.g., .py, .txt
 
-    def delete_file(self):
-        pass
+        Returns:
+            (bool): True or False depending on the success of the creation of a file
+        """
+        completed_path = path + file_exstension
 
-    def save(self, data, location: str, file_extension: str) -> None:
+        if not self.exists(completed_path):
+            open(completed_path, 'w', encoding='utf-8').close()
+            return True
+        
+        print(f"Sorry, file {completed_path} already exists.")
+        
+        return False
+
+    def make_directory(self, path: str) -> bool:
+        """
+        Provided a directory doesn't exist, create the directory
+        Otherwise, notify that the directory already exists
+
+        Args:
+            path (str): path for the directory desired to be created
+
+        Returns:
+            (bool): True or False dependonf on the success on the creation of a directory
+        """
+        if not self.exists(path):
+            os.mkdir(path)
+            return True
+        
+        print(f"Sorry, directory {path} already exists.")
+        
+        return False
+
+    def delete_file(self, path: str) -> bool:
+        """
+        Provided a file exists, remove it, otherwise notify that the file
+        doesn't exist in the first place
+
+        Args:
+            path (str): Path for the file to be deleted
+
+        Returns:
+            (bool): True or False depending on the success of deletion
+        """
+        if self.exists(path):
+            os.remove(path)
+            return True
+
+        print(f"Sorry, {path} doesn't exist, cannot be deleted.")
+        
+        return False
+
+    def delete_directory(self, path: str) -> bool:
+        """
+        Provided a directory exists, remove it, otherwise notify that the file
+        doesn't exist in the first place
+
+        Args:
+            path (str): Path for the file to be deleted
+
+        Returns:
+            (bool): True or False depending on the success of deletion
+        """
+
+        if self.exists(path):
+            os.rmdir(path)
+            return True
+
+        print(f"Sorry, {path} doesn't exist, cannot be deleted")
+
+        return False
+
+    def save_file(self, data, location: str, file_extension: str, mode: str) -> None:
         pass
 
 
 if __name__ == "__main__":
     fm = FileManager()
-    
