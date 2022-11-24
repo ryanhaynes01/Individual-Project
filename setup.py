@@ -1,4 +1,4 @@
-from setuptools import setup
+import setuptools
 import os
 
 def get_requirements():
@@ -15,7 +15,7 @@ def get_requirements():
 
     return requirements
 
-setup (
+setuptools.setup (
     name = "Individual Project",
     version="0.0.1",
     description="WIP",

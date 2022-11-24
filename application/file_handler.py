@@ -1,5 +1,5 @@
 import os
-import sys
+import shutil
 
 class FileManager():
     """
@@ -118,12 +118,19 @@ class FileManager():
         """
 
         if self.exists(path):
-            os.rmdir(path)
+            shutil.rmtree(path)
             return True
 
         print(f"Sorry, {path} doesn't exist, cannot be deleted")
 
         return False
+
+    def items_in_directory(self, location: str) -> list:
+        if self.exists(location):
+            return os.listdir(location)
+        
+        print(f"Sorry, {location} doesn't exist.")
+        return []
 
     def save_file(self, data, location: str, file_extension: str, mode: str) -> None:
         pass
