@@ -1,0 +1,26 @@
+<annotation>
+	<folder>monster_original</folder>
+	<filename>154.jpg</filename>
+	<path>E:\Code\Individual Project\Individual-Project\application\bin\frame_output\monster_original\154.jpg</path>
+	<source>
+		<database>Unknown</database>
+	</source>
+	<size>
+		<width>1920</width>
+		<height>1080</height>
+		<depth>3</depth>
+	</size>
+	<segmented>0</segmented>
+	<object>
+		<name>monster-original</name>
+		<pose>Unspecified</pose>
+		<truncated>0</truncated>
+		<difficult>0</difficult>
+		<bndbox>
+			<xmin>559</xmin>
+			<ymin>2</ymin>
+			<xmax>944</xmax>
+			<ymax>935</ymax>
+		</bndbox>
+	</object>
+</annotation>
